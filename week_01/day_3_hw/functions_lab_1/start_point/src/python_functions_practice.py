@@ -64,4 +64,6 @@ def random_string(string):
     return string[::-1]
 
 def temp_conversions(temp):
-    return (temp - 30) /2
+    # return (temp - 30) /2
+    result = (temp - 32) * (5/9)
+    return round(result, 2)
