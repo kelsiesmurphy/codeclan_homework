@@ -63,7 +63,7 @@ def customer_can_afford_pet(customer, new_pet):
         return False
 
 
-    # --- Integration Tests ---
+    # --- INTEGRATION TESTS ---
 
 def sell_pet_to_customer(pet_shop, pet, customer):
     if pet in pet_shop["pets"] and customer["cash"] >=pet["price"]:
