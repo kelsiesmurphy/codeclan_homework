@@ -64,12 +64,23 @@ def customer_can_afford_pet(customer, new_pet):
 
     # --- INTEGRATION TESTS ---
 
+# def sell_pet_to_customer(pet_shop, pet, customer):
+#     if pet in pet_shop["pets"] and customer["cash"] >=pet["price"]:
+#         customer["cash"] -= pet["price"]
+#         pet_shop["admin"]["total_cash"] += pet["price"]
+#         pet_shop["admin"]["pets_sold"] += 1
+#         pet_shop["pets"].remove(pet)
+#         customer["pets"].append(pet)
+#     else:
+#         pass
+
+
 def sell_pet_to_customer(pet_shop, pet, customer):
-    if pet in pet_shop["pets"] and customer["cash"] >=pet["price"]:
-        customer["cash"] -= pet["price"]
-        pet_shop["admin"]["total_cash"] += pet["price"]
-        pet_shop["admin"]["pets_sold"] += 1
-        pet_shop["pets"].remove(pet)
-        customer["pets"].append(pet)
+    if pet in pet_shop["pets"] and customer_can_afford_pet(customer, pet):
+        remove_customer_cash(customer, pet["price"])
+        add_or_remove_cash(pet_shop, pet["price"])
+        increase_pets_sold(pet_shop, 1)
+        remove_pet_by_name(pet_shop, pet["name"])
+        add_pet_to_customer(customer, pet)
     else:
         pass
