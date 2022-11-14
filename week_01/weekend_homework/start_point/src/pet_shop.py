@@ -13,7 +13,6 @@ def get_pets_sold(pet_shop):
 
 def increase_pets_sold(pet_shop, pets_sold):
     pet_shop["admin"]["pets_sold"] += pets_sold
-    return pet_shop["admin"]["pets_sold"]
 
 def get_stock_count(pet_shop):
     return len(pet_shop["pets"])
@@ -43,7 +42,6 @@ def get_customer_cash(customer):
 
 def remove_customer_cash(customer, cash_value):
     customer["cash"] -= cash_value
-    return customer["cash"]
 
 def get_customer_pet_count(customer):
     return len(customer["pets"])
