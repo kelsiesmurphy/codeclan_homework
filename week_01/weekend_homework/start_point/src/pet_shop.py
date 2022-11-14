@@ -74,7 +74,7 @@ def customer_can_afford_pet(customer, new_pet):
 
 
 def sell_pet_to_customer(pet_shop, pet, customer):
-    if pet in pet_shop["pets"] and customer_can_afford_pet(customer, pet):
+    if pet and customer_can_afford_pet(customer, pet):
         remove_customer_cash(customer, pet["price"])
         add_or_remove_cash(pet_shop, pet["price"])
         increase_pets_sold(pet_shop, 1)
