@@ -11,7 +11,7 @@ class Room:
             self.checked_in_guests.append(guest)
             guest.money -= self.entry_fee
         else:
-            return None
+            return "Cannot get this room"
 
     def check_out(self, guest):
         self.checked_in_guests.remove(guest)
@@ -21,3 +21,9 @@ class Room:
 
     def remove_song(self, song):
         self.songs_list.remove(song)
+
+    def favourite_song_on_playlist(self, guest):
+        if guest.favourite_song in self.songs_list:
+            return "Whoo!"
+        else:
+            return "Booo!"

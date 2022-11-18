@@ -1,5 +1,5 @@
 # E-Commerce Store
-These diagrams represents a basic e-commerce store.
+This diagram represents a basic e-commerce store.
 
 ## A.D.2
 
@@ -15,7 +15,7 @@ class Product {
     name: str
     description: str
     price: int
-    image: imageg
+    image: image
     go_on_sale()
 }
 
