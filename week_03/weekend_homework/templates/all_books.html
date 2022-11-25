@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>All CodeClan Books</h2>
+    <section class="book-list-container">
+        {% for book in all_books %}
+            <a id="link" href="/all_books/{{loop.index0}}">
+                <div class="book-cell">
+                        <h3>Title: <span id="book-title">{{ book.title }}</span></h3>
+                        <p>Author: <span id="book-author">{{ book.author }}</span></p>
+                        <p>Genre: <span id="book-genre">{{ book.genre }}</span></p>
+                        <p id="book-checked-out">
+                            {% if checked_out %}
+                                Checked Out: <span id="book-checked-out">Yes</span>
+                            {% else %}
+                                Checked Out: <span id="book-checked-out">No</span>
+                            {% endif %}
+                        </p>
+                </div>
+            </a>
+            <hr>
+        {% endfor %}
+    </section>
+{% endblock %}
