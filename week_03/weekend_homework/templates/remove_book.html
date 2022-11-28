@@ -2,7 +2,7 @@
 
 {% block content %}
     <h2>Remove Book</h2>
-    <form action="/all_books/remove_book" method="post">
+    <form action="/all_books/remove_book" class="input-wrapper" method="post">
         <label for="books">Choose a book to remove:</label>
         <select name="books" id="cars">
             {% for book in all_books %}

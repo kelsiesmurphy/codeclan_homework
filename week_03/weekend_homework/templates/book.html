@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <a id="pagination" href="/all_books">Return to all</a>
     <h2>{{ book.title }}</h2>
     <section class="book-list-container">
-            <div>
-                <h3>Title: <span id="book-title">{{ book.title }}</span></h3>
+            <div class="book-cell-single">
                 <p>Author: <span id="book-author">{{ book.author }}</span></p>
                 <p>Genre: <span id="book-genre">{{ book.genre }}</span></p>
                 <p>Checked Out: <span id="book-checked-out">{{ book.checked_out }}</span></p>
