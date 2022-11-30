@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Edit book</h2>
+    <form action="/books/{{book.book_id}}" method="post">
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" value="{{book.title}}">
+        </div>
+        <div>
+            <label for="author_id">Author:</label>
+            <select name="author_id" id="author_id">
+                {% for author in authors %}
+                    <option value="{{ author.author_id }}" {% if book.author.author_id == author.author_id %}selected="selected"{% endif %}>
+                        {{ author.name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit">Update Book</button>
+    </form>
 {% endblock content%}

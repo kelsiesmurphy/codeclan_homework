@@ -6,9 +6,14 @@
         {% for book in books %}
             <a href="/books/{{book.book_id}}">
                 <div class="book-container">
-                    <div class="book-title">{{book.book_id}}</div>
                     <div class="book-title">{{book.title}}</div>
                     <div class="book-author">{{book.author.name}}</div>
+                    <form action="/books/{{book.book_id}}/edit" method="post">
+                        <button><i class="fa fa-edit"></i>Edit</button>
+                    </form>
+                    <form class="delete-button" action="/books/{{book.book_id}}/delete" method="post">
+                        <button><i class="fa fa-trash-o"></i>Delete</button>
+                    </form>
                 </div>
             </a>
         {% endfor %}
