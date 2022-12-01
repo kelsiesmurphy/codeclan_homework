@@ -2,13 +2,15 @@
 
 {% block content %}
     <div class="book-container">
-        <h2>{{book.title}}</h2>
-        <h3>{{book.author.name}}</h3>
-        <form action="/books/{{book.book_id}}/edit" method="post">
-            <button><i class="fa fa-edit"></i>Edit</button>
-        </form>
-        <form class="delete-button" action="/books/{{book.book_id}}/delete" method="post">
-            <button><i class="fa fa-trash-o"></i>Delete</button>
-        </form>
+        <div>
+            <h2>{{book.title}}</h2>
+            <h3>{{book.author.name}}</h3>
+            <form action="/books/{{book.book_id}}/edit" method="post">
+                <button><i class="fa fa-edit"></i>Edit</button>
+            </form>
+            <form class="delete-button" action="/books/{{book.book_id}}/delete" method="post">
+                <button><i class="fa fa-trash-o"></i>Delete</button>
+            </form>
+        </div>
     </div>
 {% endblock content%}

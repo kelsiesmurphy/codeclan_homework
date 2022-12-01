@@ -6,3 +6,108 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+header {
+    background-color: #4E5BA6;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+nav>ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+nav>ul>li>a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+nav>ul>li>a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 80px 1rem;
+    max-width: 768px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+
+input, select, button {
+    border: 1px solid #D5D9EB;
+    padding-inline: 12px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+button {
+    border: none;
+    background-color: #4E5BA6;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+    width: 100%;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+button:hover {
+    background-color: #363F72;
+}
+
+i {
+    margin-right: 8px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #344054;
+    margin-bottom: 4px;
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+}
+
+.book-container {
+    padding: 1rem;
+    border: 1px solid #D5D9EB;
+    display: block;
+    border-radius: 16px;
+    text-decoration: none;
+}
+
+.book-container>div {
+    gap: 16px;
+}
+
+.book-title, .book-author {
+    font-size: 24px;
+    font-weight: 600;
+    color: #344054;
+}
+
+.book-author {
+    font-size: 18px;
+}
+
+.books-wrapper {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}

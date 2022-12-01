@@ -36,7 +36,7 @@ def save(book):
 
 def update(book):
     sql = "UPDATE books SET (title, author_id) = (%s, %s) WHERE book_id = %s"
-    values = [book.title, book.author.author_id]
+    values = [book.title, book.author.author_id, book.book_id]
     run_sql(sql, values)
 
 

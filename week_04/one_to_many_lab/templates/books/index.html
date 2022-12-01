@@ -4,8 +4,8 @@
     <h2>All Books</h2>
     <section class="books-wrapper">
         {% for book in books %}
-            <a href="/books/{{book.book_id}}">
-                <div class="book-container">
+            <a class="book-container"href="/books/{{book.book_id}}">
+                <div>
                     <div class="book-title">{{book.title}}</div>
                     <div class="book-author">{{book.author.name}}</div>
                     <form action="/books/{{book.book_id}}/edit" method="post">
