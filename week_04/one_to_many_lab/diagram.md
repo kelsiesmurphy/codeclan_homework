@@ -1,9 +1,11 @@
+## Class Diagram
 ```mermaid
 classDiagram
 
 class Book {
     title:str
-    author_id:int
+    author:author
+    book_id:serial
     view()
     delete()
     create()
@@ -16,6 +18,7 @@ class Book {
 
 class Author {
     name:str
+    author_id:serial
     view()
     delete()
     save()
@@ -24,4 +27,19 @@ class Author {
 }
 
 Author --> Book
+```
+
+## Entity Relationship Diagram
+```mermaid
+erDiagram
+    BOOKS }|--|| AUTHORS : references
+    BOOKS {
+        VARCHAR title
+        book_id serial
+        author_id int
+    }
+    AUTHORS {
+        VARCHAR name
+        author_id serial
+    }
 ```
