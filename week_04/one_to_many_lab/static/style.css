@@ -87,13 +87,22 @@ button[type="submit"] {
 .book-container {
     padding: 1rem;
     border: 1px solid #D5D9EB;
-    display: block;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
     border-radius: 16px;
     text-decoration: none;
 }
 
+.book-image {
+    object-fit: contain;
+    height: 180px;
+    border-radius: 8px;
+}
+
 .book-container>div {
     gap: 16px;
+    width: 100%;
 }
 
 .book-title, .book-author {
@@ -110,4 +119,12 @@ button[type="submit"] {
     display: flex;
     gap: 16px;
     flex-direction: column;
+}
+
+.delete-button {
+    background-color: #B42318;
+}
+
+.delete-button:hover {
+    background-color: #912018;
 }

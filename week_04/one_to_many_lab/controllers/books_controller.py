@@ -33,9 +33,10 @@ def create_book():
 def save_book():
     title = request.form['title']
     author_id = request.form['author_id']
+    image = request.form['image']
     author = author_repository.select(author_id)
     
-    book = Book(title, author)
+    book = Book(title, author, image)
     book_repository.save(book)
     return redirect('/books')
 
@@ -63,9 +64,10 @@ def edit_book(book_id):
 def update_book(book_id):
     title = request.form["title"]
     author_id = request.form["author_id"]
+    image = request.form["image"]
 
     author = author_repository.select(author_id)
-    updated_book = Book(title, author, book_id)
+    updated_book = Book(title, author, image, book_id)
     book_repository.update(updated_book)
     return redirect(f'/books/{updated_book.book_id}')
 

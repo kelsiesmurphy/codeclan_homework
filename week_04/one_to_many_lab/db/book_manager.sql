@@ -11,6 +11,7 @@ CREATE TABLE authors (
 CREATE TABLE books (
     book_id SERIAL PRIMARY KEY,
     title VARCHAR(255),
+    image VARCHAR(255),
     author_id INT NOT NULL REFERENCES authors(author_id)
 );
 
