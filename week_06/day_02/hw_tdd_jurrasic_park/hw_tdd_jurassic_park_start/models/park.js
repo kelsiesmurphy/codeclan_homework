@@ -60,7 +60,7 @@ const Park = function (name, ticketPrice, dinosaurCollection) {
 
   // If the dinosaur is not part of the species requested, it is added to a list. Later in the function the list of remaining dinosaurs overwrites the original collection.
   Park.prototype.removeAllDinosaursBySpecies = function(particularSpecies) {
-    dinosaursRemaining = [];
+    let dinosaursRemaining = [];
     for(dinosaur of this.dinosaurCollection){
       if(dinosaur.species !== particularSpecies){
         dinosaursRemaining.push(dinosaur);
@@ -72,7 +72,7 @@ const Park = function (name, ticketPrice, dinosaurCollection) {
 
   // Needed for dinosaurDiets prototype below
   Park.prototype.findDinosaursByDiet = function(diet) {
-    dinosaursByDiet = [];
+    let dinosaursByDiet = [];
     for(dinosaur of this.dinosaurCollection){
       if(dinosaur.diet === diet){
         dinosaursByDiet.push(dinosaur);
@@ -82,7 +82,7 @@ const Park = function (name, ticketPrice, dinosaurCollection) {
   }
 
   Park.prototype.dinosaurDiets = function(){
-    dietObject = {}
+    let dietObject = {}
     for(dinosaur of this.dinosaurCollection){
       dietObject[dinosaur.diet] = this.findDinosaursByDiet(dinosaur.diet).length;
     }
