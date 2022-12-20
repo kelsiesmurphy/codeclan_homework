@@ -1,5 +1,10 @@
+* {
+  margin: 0;
+}
+
 body {
   margin: 0;
+  padding: 80px 16px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +15,53 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.films-container {
+  border: 2px solid black;
+  background-color: #f1f1f1;
+  margin: auto;
+  max-width: 400px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.upcoming-releases-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.upcoming-releases-wrapper>li>a {
+  text-decoration: none;
+  color: #136cb2;
+  font-weight: 500;
+}
+
+.upcoming-releases-wrapper>li>a:hover {
+  text-decoration: underline;
+}
+
+.view-button {
+  color: #136cb2;
+  background-color: #a5cae6;
+  border: 1.5px solid black;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.view-button:hover {
+  background-color: #114f81;
+  color: #ffffff;
 }

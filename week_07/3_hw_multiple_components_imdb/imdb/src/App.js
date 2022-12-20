@@ -1,6 +1,8 @@
+import FilmsContainer from "./containers/FilmsContainer";
+
 function App() {
   return (
-    <h1>Hello World</h1>
+    <FilmsContainer />
   );
 }
 
