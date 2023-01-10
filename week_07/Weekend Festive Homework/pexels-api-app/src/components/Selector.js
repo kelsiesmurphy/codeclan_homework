@@ -6,9 +6,8 @@ const Selector = ({colour, getColour}) => {
 
     return (
         <div className="colour-picker">
-            <h3>Selector</h3><label htmlFor="colour-picker">Color Picker:</label>
+            <label htmlFor="colour-picker">Pick a colour:</label>
             <input type="color" id="colour-picker" onChange={handleColourChange} value={colour} />
-            <button>New</button>
         </div>
     )
 };

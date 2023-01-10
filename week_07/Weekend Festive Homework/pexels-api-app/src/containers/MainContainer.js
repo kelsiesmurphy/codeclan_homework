@@ -8,26 +8,23 @@ const MainContainer = () => {
     const [images, setImages] = useState([]);
     const [colour, setColour] = useState("#ff0000");
 
-    const getImages = function(){
-        fetch('https://api.pexels.com/v1/search?query=shop', {
-            headers: {Authorization: '563492ad6f917000010000011e14f4f5c0074ef68fd997ca4584eef8'}})
+    const getImages = function(imageColour){
+        fetch(("https://api.pexels.com/v1/search?query=shop&color=" + imageColour), {
+            headers: {Authorization: '563492ad6f9170000100000192276e1cd1ae45d1bd31b7e89fbd020c'}})
         .then(res => res.json())
         .then(data => setImages(data.photos))
     }
 
-    useEffect(() => {
-        getImages(colour);
-    }, [colour])
-
     const getColour = function(colour){
         setColour(colour)
+        getImages(colour.replace('#', ''))
     }
 
     return (
         <div className="main-container">
-            <h1>This is the main container, colour is: {colour}</h1>
-            {/* <SelectorContainer colour={colour} getColour={getColour}/>
-            {colour ? <ImageContainer images={images}/> : null} */}
+            <h1>Select Images By Colour</h1>
+            <SelectorContainer colour={colour} getColour={getColour}/>
+            {colour ? <ImageContainer images={images}/> : null}
             <FooterContainer />
         </div>
     )
