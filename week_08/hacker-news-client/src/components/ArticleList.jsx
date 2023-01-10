@@ -7,7 +7,7 @@ const ArticleList = ({articles}) => {
     });
 
     return (
-        <ul>
+        <ul className='article-list'>
             {articleList}
         </ul>
     )

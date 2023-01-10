@@ -3,12 +3,13 @@ import React from 'react'
 const Filter = ({handleTextChange, inputText}) => {
 
   return (
-    <div>
+    <div className='input-wrapper'>
       <input 
+        id="input"
         value={inputText}
         type="text"
         onChange={handleTextChange}
-        placeholder="Search articles..."/>
+        placeholder="Filter Stories"/>
     </div>
   )
 }

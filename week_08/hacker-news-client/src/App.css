@@ -1,6 +1,46 @@
 #root {
-  max-width: 1280px;
+  max-width: 1128px;
+  margin: auto;
+}
+
+.App {
+  background-color: #f6f6ef;
   padding: 2rem;
 }
 
+.input-wrapper {
+  display: flex;
+}
 
+#input {
+  flex: 1;
+  height: 40px;
+  margin-inline: 1rem;
+}
+
+.article-list {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 20px;
+  padding: 0;
+}
+
+.article-list > li {
+  list-style-type: none;
+}
+
+.article-list > li > a {
+  color: black;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
