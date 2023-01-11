@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Article = ({ article, index }) => {
+const Article = ({ article }) => {
   return (
     <li>
         <a href={article.url}>
