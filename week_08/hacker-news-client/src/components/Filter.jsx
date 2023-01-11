@@ -1,6 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Filter = ({handleTextChange, inputText}) => {
+const Filter = ({ filterData }) => {
+  
+  const [inputText, setInputText] = useState("")
+
+  const handleTextChange = (event) => {
+    setInputText(event.target.value);
+  }
+
+  useEffect(() => {
+    filterData(inputText)
+  }, [inputText])
 
   return (
     <div className='input-wrapper'>
