@@ -10,7 +10,7 @@ const MainContainer = () => {
     const [inputText, setInputText] = useState("")
 
     useEffect( () => {
-        const filter = articles.filter(article => article.title.includes(inputText))
+        const filter = articles.filter(article => article.title.toLowerCase().includes(inputText.toLowerCase()))
         setFilteredArticles(filter)
     }, [inputText])
     
