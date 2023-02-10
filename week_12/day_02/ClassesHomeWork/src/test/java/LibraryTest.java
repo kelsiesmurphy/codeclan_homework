@@ -54,6 +54,6 @@ public class LibraryTest {
     public void addsBookToBooksByGenreWhenAddingNewBook() {
         Book book1 = new Book("The Great Gatsby", "F Scott Fitsgerald", "Fantasy");
         library.addBook(book1);
-        assertEquals(1, library.getBooksByGenreCount("Magic"));
+        assertEquals(2, library.getBooksByGenreCount("Fantasy"));
     }
 }
