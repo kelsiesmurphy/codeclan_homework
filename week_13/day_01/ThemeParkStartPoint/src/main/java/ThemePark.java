@@ -34,22 +34,21 @@ public class ThemePark {
 
     public ArrayList<IReviewed> getAllReviewed() {
         ArrayList<IReviewed> reviewedItems = new ArrayList<>();
-        reviewedItems.addAll(attractions);
-        reviewedItems.addAll(stalls);
+        reviewedItems.addAll(this.attractions);
+        reviewedItems.addAll(this.stalls);
         return reviewedItems;
     }
 
-    public int incrementVisitCount(Attraction attraction) {
-        return attraction.getVisitCount() + 1;
-    }
+
     public void visit(Visitor visitor, Attraction attraction) {
-        incrementVisitCount(attraction);
+        attraction.incrementVisitCount();
         visitor.addAttraction(attraction);
     }
 
-    public HashMap<String, Integer> getAllReviews() {
+    public HashMap<String, Integer> allReviews() {
         HashMap<String, Integer> allReviewsHashMap = new HashMap<>();
         ArrayList<IReviewed> allReviews = this.getAllReviewed();
+
         for (IReviewed review : allReviews) {
             allReviewsHashMap.put(review.getName(), review.getRating());
         }
@@ -58,12 +57,17 @@ public class ThemePark {
 
     public ArrayList<IReviewed> getAllAllowedFor(Visitor visitor) {
         ArrayList<IReviewed> allowedToGoOn = new ArrayList<>();
+
         ArrayList<IReviewed> allReviews = this.getAllReviewed();
+
         for (IReviewed review : allReviews) {
             if(review instanceof ISecurity) {
                 if(((ISecurity) review).isAllowedTo(visitor)){
                     allowedToGoOn.add(review);
                 }
+            }
+            else {
+                allowedToGoOn.add(review);
             }
         }
         return allowedToGoOn;

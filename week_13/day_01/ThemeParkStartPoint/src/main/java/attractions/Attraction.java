@@ -1,7 +1,6 @@
 package attractions;
 
 import behaviours.IReviewed;
-import behaviours.ITicketed;
 
 public abstract class Attraction implements IReviewed {
     private String name;
@@ -20,6 +19,10 @@ public abstract class Attraction implements IReviewed {
 
     public int getRating() {
         return rating;
+    }
+
+    public void incrementVisitCount() {
+        visitCount += 1;
     }
 
     public int getVisitCount() {

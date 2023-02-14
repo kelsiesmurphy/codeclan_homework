@@ -9,6 +9,8 @@ import stalls.Stall;
 
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertEquals;
+
 public class ThemeParkTest {
     private ThemePark themePark;
 
@@ -24,5 +26,6 @@ public class ThemeParkTest {
         Visitor visitor1 = new Visitor(16, 145, 12.00);
         Attraction attraction1 = new Dodgems("Dodgems", 4);
         themePark.visit(visitor1, attraction1);
+        assertEquals(1, attraction1.getVisitCount());
     }
 }
